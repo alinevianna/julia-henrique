@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="imagex/png" href="./Heart.svg.png">
+    <title>Quem ama mais?</title>
+    <style>
+        body {
+            background-image: url(https://i.pinimg.com/736x/04/f1/d6/04f1d6f040f4f2dae43d6abdff8ba527.jpg);
+            margin: 20px;
+            padding: 0;
+        }
+        .painel{
+            margin: auto;
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 20px;
+            border: 2px solid #FFB7BA;
+            text-align: center;
+            padding-top: 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding-bottom: 20px;
+        }
+
+        #sim{
+            height: 40px;
+            width: 60px;
+            background-color: #eb7c80;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin-left: -50px;
+        }
+
+        #nao{
+            position: absolute;
+            height: 40px;
+            width: 60px;
+            background-color: #eb7c80;
+            border: 2px solid white;
+            border-radius: 10px;
+            color: white;
+            margin: 0 10px;
+        }
+
+        .imagem {
+            border-radius: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 600px) {
+            .painel {
+                width: 100%;
+                border-radius: 0;
+            }
+            #sim, #nao {
+                width: 25%;
+            }
+
+            #sim{
+                margin-left: -30%;
+            }
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="painel">
+        <h1>Hora da verdade</h1>
+        <h2>Quem ama mais?</h2>
+
+        <img src="https://i.pinimg.com/originals/c0/68/60/c06860b058d7aadaa28874be0a723947.gif" alt="" class="imagem">
+
+        <a href="https://www.instagram.com/reel/C1j0WZEOrLV/?igsh=MzRlODBiNWFlZA%3D%3D"><button id="sim">Aline</button></a>
+        <a><button onmouseover = "fuja()" id="nao">Rafael</button></a>
+
+    </div>
+
+    <script>
+        function fuja(){
+            var botaoNao = document.getElementById("nao");
+
+            var larguraJanela = window.innerWidth;
+            var alturaJanela = window.innerHeight;
+
+           var maxX = larguraJanela - botaoNao.offsetWidth;
+           var maxY = alturaJanela - botaoNao.offsetHeight;
+
+           var aleatorioX = Math.floor(Math.random() * maxX);
+           var aleatorioY = Math.floor(Math.random() * maxY);
+
+           botaoNao.style.left = aleatorioX + "px";
+           botaoNao.style.top = aleatorioY + "px";
+
+        }
+    </script>
+</body>
+</html>
